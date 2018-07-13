@@ -133,7 +133,7 @@ func IOStatsMetrics() (L []*model.MetricValue) {
 	dsLock.RLock()
 	defer dsLock.RUnlock()
 
-	for device := range diskStatsMap {
+	for device,_ := range diskStatsMap {
 		if !ShouldHandleDevice(device) {
 			continue
 		}
